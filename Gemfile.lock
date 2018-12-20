@@ -137,6 +137,7 @@ GEM
       activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
       mime-types
+    pg (0.15.1)
     popper_js (1.14.5)
     public_suffix (3.0.3)
     puma (3.12.0)
@@ -162,6 +163,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.2.2)
       actionpack (= 5.2.2)
       activesupport (= 5.2.2)
@@ -247,9 +253,11 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mini_magick
   paperclip (~> 4.1)
+  pg (= 0.15.1)
   puma (~> 3.11)
   rails
   rails-assets-tether (>= 1.1.0)!
+  rails_12factor (= 0.0.2)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

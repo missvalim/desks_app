@@ -70,3 +70,7 @@ gem 'trix-rails', require: 'trix'
 gem 'will_paginate', '~>3.1.0'
 gem 'devise'
 gem 'paperclip', '~> 4.1'
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
