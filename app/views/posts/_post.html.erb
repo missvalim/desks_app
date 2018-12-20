@@ -1,0 +1,29 @@
+<article.class="post">
+<section class="post-head">
+</br>
+	<h2><%= link_to post.title, post_path(post)%></h2>
+
+	<small>	
+		<time><%= post.created_at.to_date.strftime("%d %B, %Y") %></time>
+		 Автор
+				<%= post.user_id %>
+			</br>
+		<% if user_signed_in? %>
+			
+		<%= link_to t('posts.edit'), edit_post_path(post) %>
+		|
+       <%= link_to t('posts.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+			
+   </small>
+		
+</section>
+<section class="post-body clearfix">
+	<%= image_tag post.image.url(:thumb), class: 'img-thumbnail, thumb' if post.image? %>
+    <%= post.body[0,160] %>	
+    
+</section>
+
+<%= raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary'}.join('') %>
+</section>
+</article>

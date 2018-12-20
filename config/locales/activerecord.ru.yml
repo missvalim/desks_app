@@ -1,0 +1,12 @@
+ru: 
+  activerecord:
+    models:
+      post: 'Объявление'
+    attributes:
+      post:
+        title: 'Название'
+        body: 'Содержание'
+        all_tags: 'Теги'
+    errors:
+      messages:
+        blank: 'не может быть пустым'
