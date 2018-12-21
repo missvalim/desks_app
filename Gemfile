@@ -6,10 +6,10 @@ ruby '2.4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
-group :development do
+
   gem 'sqlite3'
-end
-# Use Puma as the app server
+ 
+# Use Puma as the app serverя
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -42,11 +42,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
-
+ gem 'listen', '>= 3.0.5', '< 3.2'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -73,7 +73,7 @@ gem 'will_paginate', '~>3.1.0'
 gem 'devise'
 gem 'paperclip', '~> 4.1'
 gem 'gravatarify', '~> 3.0.0'
-group :production do
+
+
   gem 'pg', '~> 0.18'
   gem 'rails_12factor', '0.0.2'
-end
