@@ -20,11 +20,14 @@ class UsersController < ApplicationController
       render :new
     end
   end
- 
+  
+  def edit
+
+  end
   private
  
   def user_params
-    params.require(:user).permit(:id, :email, :image)
+    params.require(:user).permit(:id, :email, :image, :name)
   end
  
   def set_user

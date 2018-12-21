@@ -3,8 +3,6 @@
   <head>
     <title>Desks</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -27,7 +25,7 @@
          <ul class="navbar-nav pull-xs-right">
               <% if user_signed_in? %>
                   <li> 
-                
+                 <%= gravatar_tag current_user.email, :size => 35 %> 
                   <%= current_user.email %>
                 </li>
                 <li>
@@ -44,10 +42,9 @@
               <% end %>
         </ul>
       </nav>
-
     </div>
       <div class="container main">
-    <div class="row">
+       <div class="row">
         <div class="col-md-12">
          <% flash.each do | name, message| %>
         <div class="alert <%= bootstrap_class_for(name) %>">
@@ -55,18 +52,19 @@
           <%= message %>
         </div>
         <% end %>
-    </div>
-   </div>
-   <div class="row">
-    <div class="col-md-9">
-            <%= yield %>
-      
-    </div>
-    <div class="col-md-3">
-       <%= t('common.tag') %></br>
-        <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 }) do |tag, css_class| %>
-        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-        <% end %>
-    </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-9">
+            <%= yield %>   
+        </div>
+        <div class="col-md-3 ">
+          </r><%= t('common.tag') %></br>
+          <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 }) do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+          <% end %>
+        </div>
+      </div>
+    
   </body>
 </html>

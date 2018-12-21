@@ -1,2 +1,4 @@
-User.find_by(username: 'username')илиUser.find_by(email: 'your@email.com')
-<%= @username %>, <%= @user.email %>
+<%= gravatar_tag @user.email, :size => 80 %></br>
+
+
+<%= @user.name %>, <%= @user.email %>

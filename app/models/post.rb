@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-	validates :title, :body, presence: true
+	validates :title, :body, :adres, presence: true
 	mount_uploader :image, ImageUploader
 	has_many :taggings
 	has_many :tags, through: :taggings

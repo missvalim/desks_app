@@ -7,6 +7,13 @@ ru:
         title: 'Название'
         body: 'Содержание'
         all_tags: 'Теги'
+        adres: 'Адрес'
+      user:
+        edit: 'Редактирование'
+        name: 'Имя пользователя'
+        password: 'Пароль'
+        
+       
     errors:
       messages:
         blank: 'не может быть пустым'

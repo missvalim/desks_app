@@ -3,7 +3,8 @@
 	<h1><%= @post.title %></h1>
 	<small>
 		<time><%= @post.created_at.to_date.strftime("%d %B, %Y") %></time>
-<% if user_signed_in? %>
+		
+        <% if user_signed_in? %>
 		|
 		<%= link_to t('posts.edit'), edit_post_path(@post) %>
 		|
@@ -12,10 +13,13 @@
 		   
    </small>
 		
-</section>
-<section class="post-body">
+ </section>
+  <section class="post-body">
+  	
 	<%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
-    <%= @post.body%>	
-</section>
+    <%= @post.adres %></br>
+    <%= @post.body %>	
+
+ </section>
 </article>
 <%= render 'disqus' %>

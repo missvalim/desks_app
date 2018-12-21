@@ -3,7 +3,14 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  
+  <%= gravatar_tag @user.email, :size => 35 %>
+    <p><%= image_tag(@user.avatar_url) if @user.avatar? %></p>
+    <p> <%= f.file_field :avatar %></p>
+    <p> <%= f.hidden_field :avatar_cache %> </p>
+    <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
