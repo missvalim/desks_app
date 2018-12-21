@@ -6,10 +6,10 @@ ruby '2.4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
-
+group :development do
   gem 'sqlite3'
- 
-# Use Puma as the app serverя
+end
+# Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -74,6 +74,7 @@ gem 'devise'
 gem 'paperclip', '~> 4.1'
 gem 'gravatarify', '~> 3.0.0'
 
-
+group :production do
   gem 'pg', '~> 0.18'
   gem 'rails_12factor', '0.0.2'
+end
