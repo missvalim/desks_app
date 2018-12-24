@@ -21,4 +21,5 @@ class Post < ApplicationRecord
 		
 	end
 end
+    
 end

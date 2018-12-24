@@ -74,7 +74,6 @@ gem 'devise'
 gem 'paperclip', '~> 4.1'
 gem 'gravatarify', '~> 3.0.0'
 
-group :production do
+
   gem 'pg', '~> 0.18'
   gem 'rails_12factor', '0.0.2'
-end
