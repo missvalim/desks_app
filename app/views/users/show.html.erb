@@ -1,4 +1,4 @@
-<%= gravatar_tag @user.email, :size => 80 %></br>	
+<li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>	
 <br>Имя пользователя<br />
 <br><%= @user.name %><br />
 <br>Email пользователя<br />
