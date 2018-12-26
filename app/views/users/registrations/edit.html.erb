@@ -1,10 +1,13 @@
-<h2><%= t('users.edit') %></br><%= resource_name.to_s.humanize %></h2>
+<h2><%= t('users.edit') %></br></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-    <%= gravatar_tag @user.email, :size => 80 %>
-     
+        <%= gravatar_tag @user.email, :size => 80 %>
+
+       <div class="form-group">
+      <br><%= f.file_field :avatar %>
+       </div>
      <div class="field">
      <br><%= f.label :name %><br />
       <%= f.text_field :name %>
@@ -36,7 +39,7 @@
       <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
       <%= f.password_field :current_password, autocomplete: "current-password" %>
      </div>
-
+</br>
      <div class="actions">
       <%= f.submit t('users.update') %>
      </div>

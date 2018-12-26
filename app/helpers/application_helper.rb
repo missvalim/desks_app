@@ -9,5 +9,6 @@ module ApplicationHelper
 		}[name.to_sym] || name
 		
 	end
-		
+	
+
 end

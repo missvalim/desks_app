@@ -43,6 +43,8 @@ def show
   def destroy
     @post.destroy
     redirect_to posts_path, success: 'Статья успешно удалена'
+  else
+    redirect_to posts_path, error: 'не удалена'
   end
 
 

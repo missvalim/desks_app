@@ -1,4 +1,8 @@
-<%= gravatar_tag @user.email, :size => 80 %></br>
-
-
-<%= @user.name %>, <%= @user.email %>
+<%= gravatar_tag @user.email, :size => 80 %></br>	
+<br>Имя пользователя<br />
+<br><%= @user.name %><br />
+<br>Email пользователя<br />
+<br><%= @user.email %><br />
+<br><%= link_to "Редактировать", edit_user_path(@user) %>
+|
+<%= link_to t('users.back'), :back %>

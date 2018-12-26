@@ -6,7 +6,7 @@
 	<small>	
 		<time><%= post.created_at.to_date.strftime("%d %B, %Y") %></time>
 		 Автор
-				<%= post.user_id %>
+				<%= post.user.name %>
 			</br>
 		<% if user_signed_in? %>
 			

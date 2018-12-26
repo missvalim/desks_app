@@ -12,7 +12,7 @@ ru:
         edit: 'Редактирование'
         name: 'Имя пользователя'
         password: 'Пароль'
-        
+      
        
     errors:
       messages:

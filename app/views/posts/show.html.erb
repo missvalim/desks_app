@@ -10,16 +10,38 @@
 		|
        <%= link_to t('posts.destroy'), @post, method: :delete, data: { confirm: 'Are you sure?' } %>
        <% end %>
-		   
+		<%= @user_name %>	   
    </small>
 		
  </section>
   <section class="post-body">
-  	
+  	 
 	<%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
     <%= @post.adres %></br>
-    <%= @post.body %>	
+    <%= @post.body %>
+    
+  <hr>
+  <h2><%= t('comment.all') %></h2>
+  <% @post.comments.each do |comment| %>
+    <div class="alert alert-light">
+    <p><strong><%= comment.username %></strong>: <%= comment.body %></p>
+    </div>
+    <% end %>
+    <hr>
+   <h2><%= t('comment.comment') %></h2>
+   <%= form_for([@post, @post.comments.build]) do |f| %>
+  	<p>
+  		<%= t('comment.user') %><br>
+  		<%= f.text_field(:username, {:class => 'form-comtrol'}) %>
+  	</p>
+  	<p>
+  	 <%= t('comment.tcomment') %><br>
+  	 <%= f.text_area(:body, {:class => 'form-comtrol'}) %>
+  	</p>
+  	<p>
+  		<%= f.submit t('posts.db'), class: 'btn btn-outline-primary' %>
+  	</p>
+  	<% end%>
 
  </section>
 </article>
-<%= render 'disqus' %>
