@@ -1,0 +1,37 @@
+<h2><%= t('users.edit') %></br></h2>
+
+<%= form_for(@user) do |f| %>
+     <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+     <div class="form-group">
+        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-6">
+            <%= f.file_field :avatar %>
+        </div>
+    </div>
+     <div class="field">
+     <br><%= f.label :name %><br />
+      <%= f.text_field :name %>
+     </div>
+     <div class="field">
+     <br><%= f.label :email %><br />
+     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+     </div>
+     <div class="field">
+     <br><%= f.label :password %><br />
+     <%= f.password_field :password %>
+     </div>
+     <div class="field">
+     <br><%= f.label :password_confirmation, "new-password" %><br />
+     <%= f.password_field :password_confirmation %>
+     </div>
+</br>
+     <div class="actions">
+    <br><%= f.submit t('users.update') %><br />
+     </div>
+     <% end %>
+</br>
+
+
+
+
+<%= link_to t('users.back'), :back %>
