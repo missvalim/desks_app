@@ -5,9 +5,7 @@
 
 	<small>	
 		<time><%= post.created_at.to_date.strftime("%d %B, %Y") %></time>
-		 Автор
-				<%= current_user.name %>
-			</br>
+		 
 		<% if user_signed_in? %>
 			
 		<%= link_to t('posts.edit'), edit_post_path(post) %>

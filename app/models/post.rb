@@ -8,10 +8,12 @@ class Post < ApplicationRecord
  def self.search(search)
  	if search
  		where(["body LIKE ?","%#{search}%"])
+ 		
 	else
 		all
 	end
  end
+
  def all_tags=(names)
   self.tags = names.split(",").map do |name|
       Tag.where(name: name.strip).first_or_create!
