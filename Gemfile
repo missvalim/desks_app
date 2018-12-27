@@ -75,5 +75,5 @@ gem 'gravatarify', '~> 3.0.0'
   gem 'pg', '~> 0.18'
   gem 'rails_12factor', '0.0.2'
 
-    gem 'uglifier' 
+    gem 'uglifier', '> = 1.3.0'.  
 
