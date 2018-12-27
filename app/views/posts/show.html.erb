@@ -17,9 +17,9 @@
   <section class="post-body">
   	 
 	<%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
-    <%= @post.adres %></br>
-    <%= @post.body %>
-    
+    <%= @post.adres %><br />
+    <br><%= @post.body %><br />
+    <br><%= raw @post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary'}.join('') %><br />
   <hr>
   <h2><%= t('comment.all') %></h2>
   <% @post.comments.each do |comment| %>

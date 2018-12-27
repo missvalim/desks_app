@@ -58,11 +58,7 @@
         <div class="col-md-9">
             <%= yield %>   
         </div>
-        <div class="col-md-3 ">
-          </r><%= t('common.tag') %></br>
-          <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 }) do |tag, css_class| %>
-          
-          <% end %>
+       
         </div>
       </div>
     
