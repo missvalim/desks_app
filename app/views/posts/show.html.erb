@@ -10,12 +10,13 @@
 		|
        <%= link_to t('posts.destroy'), @post, method: :delete, data: { confirm: 'Are you sure?' } %>
        <% end %>
-		<%= @user_name %>	   
+		  
    </small>
 		
  </section>
   <section class="post-body">
-  	 
+  	   Автор
+     <b><%= @post.user.name %></b>
 	<%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
     <%= @post.adres %><br />
     <br><%= @post.body %><br />
