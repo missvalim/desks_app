@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:search])
    
   end
-def show
+  def show
 
     end
   def new
@@ -44,7 +44,7 @@ def show
     @post.destroy
     redirect_to posts_path, success: 'Статья успешно удалена'
   else
-    redirect_to posts_path, error: 'не удалена'
+    redirect_to posts_path, error: 'Не удалена'
   end
 
 

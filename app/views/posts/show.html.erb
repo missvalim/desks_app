@@ -11,14 +11,13 @@
        <%= link_to t('posts.destroy'), @post, method: :delete, data: { confirm: 'Are you sure?' } %>
        <% end %>
 		  
-   </small>
+  </small>
 		
  </section>
   <section class="post-body">
-  	   Автор
-     <b><%= @post.user.name %></b>
-	<%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
-    <%= @post.adres %><br />
+  	   <p>Автор <b><%= @post.user.name %></b></p>
+    	  <%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
+       <%= @post.adres %>
     <br><%= @post.body %><br />
     <br><%= raw @post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary'}.join('') %><br />
   <hr>

@@ -28,7 +28,7 @@
                   <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
                   <%= current_user.email %>
                 </li>
-                <li>s
+                <li>
                   <%= link_to "Профиль", current_user %>                
                   <%= link_to "Выйти", destroy_user_session_path, method: :delete, class: "nav-link" %>
                   </li>
@@ -47,20 +47,17 @@
        <div class="row">
         <div class="col-md-12">
          <% flash.each do | name, message| %>
-        <div class="alert <%= bootstrap_class_for(name) %>">
-          <button type="close" data-dismiss="alert">&times;</button>>
+         <div class="alert <%= bootstrap_class_for(name) %>">
+          <button class="close" data-dismiss="alert">&times;</button>
           <%= message %>
-        </div>
-        <% end %>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col-md-9">
-            <%= yield %>   
-        </div>
-       
+           </div>
+         <% end %>
         </div>
       </div>
-    
+      <div class="row">
+            <%= yield %> 
+      </div>
+      </div>
+
   </body>
 </html>

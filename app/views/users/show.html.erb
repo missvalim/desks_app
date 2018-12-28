@@ -1,8 +1,10 @@
-<li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>	
+
+<br><li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li><br />	
+<br><%= link_to "Редактировать", edit_user_path(@user) %>
+|
+<%= link_to t('users.back'), :back %><br />
 <br>Имя пользователя<br />
 <br><%= @user.name %><br />
 <br>Email пользователя<br />
 <br><%= @user.email %><br />
-<br><%= link_to "Редактировать", edit_user_path(@user) %>
-|
-<%= link_to t('users.back'), :back %>
+
