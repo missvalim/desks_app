@@ -43,8 +43,6 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_path, success: 'Статья успешно удалена'
-  else
-    redirect_to posts_path, error: 'Не удалена'
   end
 
 

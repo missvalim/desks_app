@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
 	validates :title, :body, :adres, presence: true
 	mount_uploader :image, ImageUploader
-	has_many :taggings
+	has_many :taggings, dependent: :destroy
 	has_many :tags, through: :taggings
-	has_many :comments
+	has_many :comments, dependent: :destroy
 	belongs_to :user
 
  def self.search(search)
