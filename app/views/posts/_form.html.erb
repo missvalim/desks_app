@@ -9,6 +9,7 @@
    </ul>
  </div>
  <% end %>
+ <div class="container">
 
 <%= form_for @post, html: { multipart: true } do |f| %>
    
@@ -39,3 +40,4 @@
    <%= link_to t('common.back'), :back, class: 'btn btn-outline-secondary' %>
   </div>
 <% end %>
+</div>
