@@ -30,17 +30,17 @@
     <hr>
    <h2><%= t('comment.comment') %></h2>
    <%= form_for([@post, @post.comments.build]) do |f| %>
-  	<p>
+  	 <p>    
   		<%= t('comment.user') %><br>
   		<%= f.text_field(:username, {:class => 'form-comtrol'}) %>
-  	</p>
-  	<p>
+      </p>
+  	 <p>     
   	 <%= t('comment.tcomment') %><br>
   	 <%= f.text_area(:body, {:class => 'form-comtrol'}) %>
-  	</p>
-  	<p>
+      </p>
+  	 <p>
   		<%= f.submit t('posts.db'), class: 'btn btn-outline-primary' %>
-  	</p>
+  	 </p>
   	<% end%>
 
  </section>
